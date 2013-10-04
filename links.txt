@@ -1,7 +1,7 @@
 http://github.com
 http://git-scm.com
-https://github.com/bodrovis/Mati_test - примеры
+https://github.com/bodrovis/Mati_test - РїСЂРёРјРµСЂС‹
 
 http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec-version_control
 
-http://kuler.adobe.com - подбор цветов
+http://kuler.adobe.com - РїРѕРґР±РѕСЂ С†РІРµС‚РѕРІ
