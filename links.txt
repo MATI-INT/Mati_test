@@ -1,7 +1,23 @@
-http://github.com
+﻿http://github.com
 http://git-scm.com
 https://github.com/bodrovis/Mati_test - примеры
 
 http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec-version_control
 
 http://kuler.adobe.com - подбор цветов
+=======================
+http://code.google.com/p/html5shiv/
+http://caniuse.com
+http://diveintohtml5.org
+
+CSS Reset
+Normalize CSS
+
+html5boilerplate.com
+http://getbootstrap.com/
+http://themeforest.net/
+
+==== FONTS ====
+http://www.google.com/fonts
+http://www.font2web.com/
+http://www.fontsquirrel.com/tools/webfont-generator
