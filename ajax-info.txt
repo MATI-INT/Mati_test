@@ -1,0 +1,22 @@
+AJAX
+
+Async
+JS
+And
+XML
+=====
+$.ajax() - GET/POST
+$.get
+$.post
+load
+$.getScript
+=====
+
+$.ajax('http://example.com', {
+  type: 'POST',
+  
+})
+====
+GET: http://example.com?query=search_term&
+param2=text
+POST: http://example.com

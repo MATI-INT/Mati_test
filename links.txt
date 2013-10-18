@@ -21,3 +21,6 @@ http://themeforest.net/
 http://www.google.com/fonts
 http://www.font2web.com/
 http://www.fontsquirrel.com/tools/webfont-generator
+
+=== Online courses ===
+http://coursera.org
