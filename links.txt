@@ -24,3 +24,32 @@ http://www.fontsquirrel.com/tools/webfont-generator
 
 === Online courses ===
 http://coursera.org
+
+=== Ruby ===
+http://ruby-lang.org
+http://rubyinstaller.org
+http://ruby-doc.org/
+The Book of Ruby
+Learn Ruby the Hard Way
+
+=== IDE ===
+RubyMine
+Aptana Studio
+SublimeText
+NetBeans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
