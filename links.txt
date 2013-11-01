@@ -38,6 +38,13 @@ Aptana Studio
 SublimeText
 NetBeans
 
+=== Rails ===
+http://rubygems.org
+https://www.ruby-toolbox.com/
+
+==== Books ====
+http://ruby.railstutorial.org/
+
 
 
 
