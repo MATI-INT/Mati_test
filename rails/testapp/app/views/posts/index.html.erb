@@ -1,0 +1,15 @@
+<h1>Welcome to my blog!</h1>
+
+<p><%= link_to 'New post', new_post_path %></p>
+
+<% @posts.each do |post| %>
+    <div>
+      <h2>
+        <%= link_to post.name, post_path(post) %>
+      </h2>
+      <p><b>
+        <%= post.created_at.strftime("%-d %B %Y %H:%M:%S (%A)") %>
+      </b></p>
+      <p><%= truncate post.body, length: 500 %></p>
+    </div>
+<% end %>
