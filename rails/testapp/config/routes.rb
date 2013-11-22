@@ -1,8 +1,14 @@
 Testapp::Application.routes.draw do
+  resources :comments
+
+
   root :to => 'posts#index'
 
   resources :posts,
             only: [:show, :create, :new, :edit, :update, :destroy]
+  get '/info', to: 'pages#info', as: 'info'
+  # info_path => '/info'
+  # info_url => 'http://127.0.0.1:3000/info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -44,6 +44,11 @@ https://www.ruby-toolbox.com/
 
 ==== Books ====
 http://ruby.railstutorial.org/
+Agile web development with Rails (Sam Ruby etc)
+Rails 3/4 in Action (Ryan Bigg)
+http://pragprog.com
+http://manning.com/
+http://oreilly.com/
 
 
 
