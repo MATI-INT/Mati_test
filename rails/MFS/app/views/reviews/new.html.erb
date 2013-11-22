@@ -1,0 +1,29 @@
+<h1>New review</h1>
+
+<%= form_for @review, class: 'form-horizontal' do |f| %>
+    <%= render 'shared/errors', obj: @review %>
+
+    <div class="control-group">
+      <%= f.label :title, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title,
+                         placeholder: 'Enter title...',
+                         required: true,
+                         maxlength: 50 %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :body, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :body, required: true,
+                        maxlength: 5000%>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit 'Create', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
