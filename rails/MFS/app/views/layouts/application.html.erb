@@ -25,6 +25,17 @@
           </li>
         </ul>
       </div><!--/.nav-collapse -->
+
+      <div class="pull-right" id="user-block">
+        <% if current_user %>
+            <p>
+              <%= current_user.user_name %>
+              <%= link_to 'Sign out', sign_out_path %>
+            </p>
+        <% else %>
+            <a class="twitter" href="/auth/twitter"></a>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

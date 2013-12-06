@@ -52,9 +52,18 @@ http://oreilly.com/
 
 === Bootstrap ===
 http://getbootstrap.com/
+http://railsgirls.com
 
+=== Compass ===
+http://compass-style.org
+http://railscasts.com/episodes/334-compass-css-sprites
 
+=== SASS ===
+http://sass-lang.com
 
+=== jScrollPane ===
+http://jscrollpane.kelvinluck.com/
+http://www.radiant-wind.com/categories/javascript/posts/nestandartnaya-polosa-prokrutki-s-pomoschyu-javascript
 
 
 

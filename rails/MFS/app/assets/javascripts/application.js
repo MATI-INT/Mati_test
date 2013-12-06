@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.jscrollpane
+//= require jquery.mousewheel
+//= require jquery.mwheelintent
+//= require misc

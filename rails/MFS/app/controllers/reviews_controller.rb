@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_filter :is_authenticated, except: [:show, :index]
+
   def destroy
     @review = Review.find_by_id(params[:id])
     if @review

@@ -1,9 +1,14 @@
 MFS::Application.routes.draw do
-
+  resources :users, only: [:show]
   root to: 'reviews#index'
   resources :reviews, only: [:index, :show, :new, :create,
                              :destroy]
 
+
+  match '/auth/:provider/callback', to: 'sessions#create'
+  match '/auth/failure', to: redirect('/')
+  match '/sessions/destroy', to: 'sessions#destroy',
+        as: 'sign_out'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

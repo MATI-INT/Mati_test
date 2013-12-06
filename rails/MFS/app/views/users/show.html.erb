@@ -1,0 +1,32 @@
+<div class="row-fluid" id="user-details">
+  <h1>Profile of <%= @user.user_name %></h1>
+
+  <div class="span5">
+    <%= image_tag @user.image, alt: @user.user_name %>
+    <ul>
+      <li><b>Provider:</b> <%= @user.provider %></li>
+      <li>
+        <b>Social profile:</b>
+        <%= link_to @user.profile_url, @user.profile_url,
+                    target: '_blank' %>
+      </li>
+      <li><b>Review count:</b> <%= @user.reviews.count %></li>
+    </ul>
+  </div>
+
+  <div class="span6">
+    <h3>Latest reviews</h3>
+    <div id="latest-reviews" class="make-jscrollpane">
+      <ul>
+        <% @latest_reviews.each do |review| %>
+            <li>
+              <p><b><%= link_to review.title,
+                                review_path(review) %></b></p>
+              <p><i><%= review.formatted_date %></i></p>
+              <p><%= truncate(review.body, length: 500) %></p>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

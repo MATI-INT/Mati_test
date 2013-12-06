@@ -3,27 +3,34 @@
 
   <p>This is reviewing system.</p>
 
-  <%= link_to 'Create new review', new_review_path,
-              class: 'btn btn-primary btn-large'%>
+  <% if current_user %>
+      <%= link_to 'Create new review', new_review_path,
+                  class: 'btn btn-primary btn-large'%>
+  <% else %>
+      <%= link_to 'Authenticate via Twitter to start',
+                  '/auth/twitter',
+                  class: 'btn btn-primary btn-large'%>
+  <% end %>
 </div>
 
 <%= will_paginate @reviews %>
 
 <table class="table table-striped table-hover">
   <tr>
-    <th>#</th>
     <th>Title</th>
     <th>Text</th>
     <th>Created at</th>
+    <th>Author</th>
   </tr>
   <% @reviews.each_with_index do |review, index| %>
       <tr>
-        <td><%= index + 1 %></td>
         <td><%= link_to review.title,
                         review_path(review) %></td>
         <td><%= truncate strip_tags(review.body),
                          length: 250 %></td>
-        <td><%= review.created_at %></td>
+        <td><%= review.formatted_date %></td>
+        <td><%= link_to review.user.user_name,
+                        user_path(review.user) %></td>
       </tr>
   <% end %>
 </table>
