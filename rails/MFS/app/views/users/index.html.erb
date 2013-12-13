@@ -1,0 +1,29 @@
+<h1>All users</h1>
+
+<ul id="users-list">
+  <% @users.each do |user| %>
+      <li id="user-<%= user.id %>">
+        <% if user.image && user.image != '' %>
+            <%= image_tag user.image, alt: user.user_name %>
+        <% end %>
+        <%= link_to user.user_name, user.profile_url,
+                    target: '_blank' %>
+        (provider: <%= user.provider %>;
+        role: <span class="role"><%= user.role %></span>;
+        joined: <%= user.created_at %>)
+
+        <% user.role == 'admin' ?
+                   link_text = 'Remove admin rights' :
+                   link_text = 'Make admin' %>
+
+        <%= link_to link_text,
+                    toggle_user_role_url(user),
+                    remote: true,
+                    class: 'change_role' %>
+
+        <%= link_to 'Delete', user_path(user),
+                    method: :delete,
+                    confirm: 'Are you sure?' %>
+      </li>
+  <% end %>
+</ul>

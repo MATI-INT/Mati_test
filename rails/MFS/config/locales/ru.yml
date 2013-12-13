@@ -1,0 +1,6 @@
+ru:
+  will_paginate:
+    previous_label: "Назад"
+    next_label: "Вперёд"
+  top_menu:
+    change_locale: "Сменить язык"

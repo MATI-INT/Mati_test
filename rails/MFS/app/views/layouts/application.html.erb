@@ -20,13 +20,26 @@
       <%= link_to 'MFS', root_url, class: 'brand' %>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active">
+          <li>
             <%= link_to 'Home', root_url %>
           </li>
+          <% if can?(:index, UsersController) %>
+              <li>
+                <%= link_to 'Users', users_url %>
+              </li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
 
       <div class="pull-right" id="user-block">
+
+        <% I18n.locale == :ru ?
+                   locale = :en :
+                   locale = :ru %>
+
+        <%= link_to t('top_menu.change_locale'),
+                    change_locale_url(locale) %>
+
         <% if current_user %>
             <p>
               <%= current_user.user_name %>
@@ -55,6 +68,12 @@
     <%= yield %>
   </div>
 </div>
+
+<footer>
+  <div class="container-fluid">
+    &copy; <%= Time.now.year %> MATI Feedback System
+  </div>
+</footer>
 
 </body>
 </html>

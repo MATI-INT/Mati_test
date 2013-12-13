@@ -1,0 +1,36 @@
+#user-info {
+  text-align: center;
+  img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+}
+
+#user-details {
+  img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+}
+
+#latest-reviews {
+  height: 250px;
+  overflow-y: auto;
+  width: 95%;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+#users-list {
+  img {
+    max-height: 50px;
+    max-width: 50px;
+  }
+}

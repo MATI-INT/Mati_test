@@ -1,0 +1,11 @@
+var element = $('#users-list li#user-<%= @user.id %>');
+var link = element.find('.change_role');
+<% if @user.role == 'admin' %>
+link.text('Remove admin rights');
+<% else %>
+link.text('Make admin');
+<% end %>
+link.effect('highlight', 2000);
+
+element.find('.role').text('<%= @user.role %>')
+        .effect('highlight', 2000);

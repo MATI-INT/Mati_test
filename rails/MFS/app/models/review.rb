@@ -13,7 +13,7 @@
 class Review < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :body, :title, :user_id
+  attr_accessible :body, :title
 
   validates :body, presence: true,
             length: {minimum: 10, maximum: 5000}

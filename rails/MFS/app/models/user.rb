@@ -17,8 +17,15 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :reviews
-  #attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
+  has_many :reviews#, dependent: :destroy
+                   #attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
+
+  after_destroy -> {
+    reviews.each do |review|
+      review.user_id = 2
+      review.save!
+    end
+  }
 
   def user_name
     nickname.to_s == '' ? name : nickname

@@ -1,5 +1,12 @@
 MFS::Application.routes.draw do
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index, :destroy]
+  get '/users/:id/toggle_role', to: 'users#toggle_role',
+      as: 'toggle_user_role'
+
+
+  get '/change_locale/:locale', to: 'settings#change_locale',
+      as: 'change_locale'
+
   root to: 'reviews#index'
   resources :reviews, only: [:index, :show, :new, :create,
                              :destroy]

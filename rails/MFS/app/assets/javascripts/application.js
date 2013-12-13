@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.ui.effect-highlight
 //= require jquery.jscrollpane
 //= require jquery.mousewheel
 //= require jquery.mwheelintent

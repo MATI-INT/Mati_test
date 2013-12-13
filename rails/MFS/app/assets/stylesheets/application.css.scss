@@ -1,6 +1,7 @@
 @import 'icon/*.png';
 @import "bootstrap";
 @import 'jscrollpane';
+@import 'users.css.scss';
 
 #main_content {
   margin-top: 60px;
@@ -32,36 +33,6 @@ textarea {
   }
 }
 
-#user-info {
-  text-align: center;
-  img {
-    max-width: 80px;
-    max-height: 80px;
-  }
-}
-
-#user-details {
-  img {
-    max-width: 80px;
-    max-height: 80px;
-  }
-}
-
-#latest-reviews {
-  height: 250px;
-  overflow-y: auto;
-  width: 95%;
-  ul {
-    margin: 0;
-    padding: 0;
-    li {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-
 .make-jscrollpane {
   .jspDrag {
     background-color: #0088CC;
@@ -70,4 +41,14 @@ textarea {
   .jspTrack {
     background-color: #fff;
   }
+}
+
+footer {
+  margin-top: 15px;
+  padding-top: 15px;
+  margin-bottom: 5px;
+  border-top: 1px solid #ccc;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
 }

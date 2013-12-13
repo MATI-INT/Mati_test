@@ -7,9 +7,13 @@ gem 'rails', '3.2.15'
 
 gem 'sqlite3'
 
+gem 'thin'
+
 gem "omniauth-twitter"
 
 gem 'annotate'
+
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,6 +35,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "will_paginate"
 # gem "kaminari"
 
