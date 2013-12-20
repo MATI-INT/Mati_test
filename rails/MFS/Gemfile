@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.15'
 
+gem "dragonfly", "~> 1.0.1"
+gem 'rack-cache', require: 'rack-cache'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -29,9 +31,11 @@ group :assets do
   gem "bootstrap-will_paginate", '0.0.9'
   gem "compass-rails", "~> 1.1.2"
 
-  gem "jscrollpane-rails", "2.0.18"
+  gem "jscrollpane-rails"
   gem "jquery-mousewheel-rails"
   gem 'mwheelintent-rails'
+
+  gem 'statistics2'
 end
 
 gem 'jquery-rails'

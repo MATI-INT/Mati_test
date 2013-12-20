@@ -12,6 +12,37 @@
                    target: '_blank' %></p>
 
 
+    <div id="vote_block">
+    <span class="badge badge-important">
+        <%= @review.votes.where(vote_type: 'down').count %>
+    </span>
+    <span class="badge badge-success">
+        <%= @review.votes.where(vote_type: 'up').count %>
+    </span>
+
+      <br/>
+      <% if current_user %>
+          <% if current_user.voted_for?(@review) %>
+              <p>Вы уже голосовали за этот отзыв!</p>
+          <% else %>
+              <%= form_for @vote do |f| %>
+                  <%= hidden_field_tag 'review_id', @review.id %>
+                  <%= hidden_field_tag 'vote_type', 'down' %>
+                  <i class="icon-thumbs-down
+                   force_submit_form"></i>
+              <% end %>
+
+              <%= form_for @vote do |f| %>
+                  <%= hidden_field_tag 'review_id', @review.id %>
+                  <%= hidden_field_tag 'vote_type', 'up' %>
+                  <i class="icon-thumbs-up
+                  force_submit_form"></i>
+              <% end %>
+          <% end %>
+      <% else %>
+          <p>Вы должны авторизоваться, чтобы голосовать!</p>
+      <% end %>
+    </div>
   </div>
 </div>
 

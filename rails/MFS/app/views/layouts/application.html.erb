@@ -38,7 +38,8 @@
                    locale = :ru %>
 
         <%= link_to t('top_menu.change_locale'),
-                    change_locale_url(locale) %>
+                    change_locale_url(locale) +
+                            "?return_to=#{CGI.escape(request.url)}" %>
 
         <% if current_user %>
             <p>

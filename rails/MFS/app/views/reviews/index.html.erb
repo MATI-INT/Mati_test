@@ -21,6 +21,7 @@
     <th>Text</th>
     <th>Created at</th>
     <th>Author</th>
+    <th>Rating</th>
   </tr>
   <% @reviews.each_with_index do |review, index| %>
       <tr>
@@ -31,6 +32,10 @@
         <td><%= review.formatted_date %></td>
         <td><%= link_to review.user.user_name,
                         user_path(review.user) %></td>
+
+        <td>
+          <%= sprintf("%.2f", review.summary_rating) %>
+        </td>
       </tr>
   <% end %>
 </table>

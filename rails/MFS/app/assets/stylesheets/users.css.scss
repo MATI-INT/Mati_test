@@ -34,3 +34,23 @@
     max-width: 50px;
   }
 }
+
+#last_votes {
+  #votes_list {
+    width: auto;
+    height: 200px;
+    max-height: 200px;
+    overflow: auto;
+    .vote {
+      width: 99%;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #000;
+      &:last-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        border-bottom: 0 none;
+      }
+    }
+  }
+}

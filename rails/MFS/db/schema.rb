@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206123456) do
+ActiveRecord::Schema.define(:version => 20131220121954) do
 
   create_table "reviews", :force => true do |t|
     t.text     "body"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20131206123456) do
     t.datetime "updated_at", :null => false
     t.string   "title"
     t.integer  "user_id"
+    t.string   "image_uid"
   end
 
   add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
@@ -48,5 +49,18 @@ ActiveRecord::Schema.define(:version => 20131206123456) do
   end
 
   add_index "users", ["provider", "uid"], :name => "index_users_on_provider_and_uid", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "vote_type"
+  end
+
+  add_index "votes", ["review_id", "user_id"], :name => "index_votes_on_review_id_and_user_id", :unique => true
+  add_index "votes", ["review_id"], :name => "index_votes_on_review_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
+  add_index "votes", ["vote_type"], :name => "index_votes_on_vote_type"
 
 end

@@ -1,4 +1,6 @@
 MFS::Application.routes.draw do
+  resources :votes, only: [:create]
+
   resources :users, only: [:show, :index, :destroy]
   get '/users/:id/toggle_role', to: 'users#toggle_role',
       as: 'toggle_user_role'

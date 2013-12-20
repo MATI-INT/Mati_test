@@ -15,18 +15,43 @@
   </div>
 
   <div class="span6">
-    <h3>Latest reviews</h3>
-    <div id="latest-reviews" class="make-jscrollpane">
-      <ul>
-        <% @latest_reviews.each do |review| %>
-            <li>
-              <p><b><%= link_to review.title,
-                                review_path(review) %></b></p>
-              <p><i><%= review.formatted_date %></i></p>
-              <p><%= truncate(review.body, length: 500) %></p>
-            </li>
-        <% end %>
-      </ul>
+    <ul id="user-nav-tabs" class="nav nav-tabs">
+      <li><a href="#last_reviews" data-toggle="tab">
+        Последние отзывы
+      </a></li>
+      <li><a href="#last_votes" data-toggle="tab">
+        Последние голоса
+      </a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="last_reviews"
+           class="last_reviews tab-pane fade in">
+        <h3>Latest reviews</h3>
+        <div id="latest-reviews" class="make-jscrollpane">
+          <ul>
+            <% @latest_reviews.each do |review| %>
+                <li>
+                  <p><b><%= link_to review.title,
+                                    review_path(review) %></b></p>
+                  <p><i><%= review.formatted_date %></i></p>
+                  <p><%= truncate(review.body, length: 500) %></p>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div id="last_votes" class="last_votes tab-pane fade in">
+        <h3>Последние отданные голоса</h3>
+        <p>fdfsdfd</p>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#user-nav-tabs li a').first().tab('show');
+    });
+</script>

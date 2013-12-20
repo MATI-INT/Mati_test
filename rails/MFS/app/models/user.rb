@@ -18,7 +18,10 @@
 
 class User < ActiveRecord::Base
   has_many :reviews#, dependent: :destroy
-                   #attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
+
+  #attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
+
+  has_many :votes, dependent: :destroy
 
   after_destroy -> {
     reviews.each do |review|
@@ -29,6 +32,10 @@ class User < ActiveRecord::Base
 
   def user_name
     nickname.to_s == '' ? name : nickname
+  end
+
+  def voted_for?(review)
+    votes.where(review_id: review.id).any?
   end
 
   def self.from_omniauth(auth)

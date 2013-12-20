@@ -65,8 +65,8 @@ http://sass-lang.com
 http://jscrollpane.kelvinluck.com/
 http://www.radiant-wind.com/categories/javascript/posts/nestandartnaya-polosa-prokrutki-s-pomoschyu-javascript
 
-
-
+== Rating ==
+http://habrahabr.ru/company/darudar/blog/143188/
 
 
 
