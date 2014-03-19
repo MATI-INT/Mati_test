@@ -2,6 +2,12 @@
   <div class="span7">
     <h1><%= @review.title %></h1>
     <div class="well well-large"><%= @review.body %></div>
+    <% if @review.image %>
+        <div class="well well-large">
+          <%= image_tag @review.image.thumb('250x250#').url,
+                        alt: 'Image' %>
+        </div>
+    <% end %>
   </div>
 
   <div class="span5" id="user-info">
@@ -14,10 +20,10 @@
 
     <div id="vote_block">
     <span class="badge badge-important">
-        <%= @review.votes.where(vote_type: 'down').count %>
+        <%= @review.votes_of_type('down') %>
     </span>
     <span class="badge badge-success">
-        <%= @review.votes.where(vote_type: 'up').count %>
+        <%= @review.votes_of_type('up') %>
     </span>
 
       <br/>

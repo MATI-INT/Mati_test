@@ -1,3 +1,4 @@
+require 'statistics2'
 # == Schema Information
 #
 # Table name: reviews
@@ -28,12 +29,16 @@ class Review < ActiveRecord::Base
                      in: ['jpeg', 'png', 'gif', 'jpg',
                      'rar', 'zip', 'doc', 'docx', 'txt']
 
+  after_commit :flush_cache
+
   def formatted_date
     created_at.strftime('%-d %B %Y %H:%M:%S')
   end
 
   def votes_of_type(type)
-    votes.where(vote_type: type).count
+    Rails.cache.fetch(self.id.to_s + '_votes_' + type.to_s) {
+      votes.where(vote_type: type).count
+    }
   end
 
   def summary_rating
@@ -51,5 +56,17 @@ class Review < ActiveRecord::Base
       (phat + z * z / (2 * n) - z * Math.sqrt((phat * (1 - phat) + z * z / (4 * n)) / n)) /
           (1 + z * z / n)
     end
+  end
+
+  def self.all_cached
+    Rails.cache.fetch('all_reviews') {
+      order('created_at DESC')
+    }
+  end
+
+  private
+
+  def flush_cache
+    Rails.cache.delete('all_reviews')
   end
 end

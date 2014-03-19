@@ -1,0 +1,10 @@
+---
+name: Twitter_logo_white.png
+model_class: Review
+model_attachment: image
+analyser_cache:
+  image_properties:
+    format: png
+    width: 1139
+    height: 926
+  format: png

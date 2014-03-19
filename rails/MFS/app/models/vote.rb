@@ -18,4 +18,15 @@ class Vote < ActiveRecord::Base
   validates :user_id, presence: true
   validates :review_id, presence: true
   validates :vote_type, presence: true
+
+  after_commit :flush_cache
+
+  private
+
+  def flush_cache
+    Rails.cache.delete(
+        self.review_id.to_s + '_votes_' +
+            self.vote_type.to_s
+    )
+  end
 end

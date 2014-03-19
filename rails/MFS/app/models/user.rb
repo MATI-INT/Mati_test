@@ -19,7 +19,7 @@
 class User < ActiveRecord::Base
   has_many :reviews#, dependent: :destroy
 
-  #attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
+  attr_accessible :image, :name, :nickname, :profile_url, :provider, :secret, :token, :uid
 
   has_many :votes, dependent: :destroy
 

@@ -1,13 +1,33 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
+gem 'rails', '3.2.17'
 
-gem 'rails', '3.2.15'
+gem "dragonfly", "~> 1.0.2"
+gem 'dragonfly-s3_data_store'
 
-gem "dragonfly", "~> 1.0.1"
 gem 'rack-cache', require: 'rack-cache'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'memcachier'
+  gem 'dalli'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem "rspec-rails", "~> 2.14.1"
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  gem 'rack_session_access', git: 'https://github.com/railsware/rack_session_access.git'
+end
+
 
 gem 'thin'
 

@@ -37,9 +37,9 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.order('created_at DESC').paginate(
+    @reviews = Review.all_cached.paginate(
         page: params[:page],
-        per_page: 10
+        per_page: 15
     )
   end
 end
