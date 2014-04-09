@@ -1,4 +1,5 @@
 MFS::Application.routes.draw do
+  get '/test_haml', to: 'pages#test_haml'
   resources :votes, only: [:create]
 
   resources :users, only: [:show, :index, :destroy]

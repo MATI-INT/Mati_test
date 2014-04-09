@@ -1,5 +1,13 @@
 <h1>New review</h1>
 
+<form id="test_form">
+  <label for="user_email">Email:</label>
+  <input type="text" id="user_email">
+
+  <button id="submit_user_form">Submit</button>
+</form>
+
+
 <%= form_for @review, class: 'form-horizontal' do |f| %>
     <%= render 'shared/errors', obj: @review %>
 
